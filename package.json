@@ -1,0 +1,27 @@
+{
+  "name": "redux-state-observable",
+  "version": "0.0.1",
+  "description": "path to redux state property as observable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammonix/redux-state-observable.git"
+  },
+  "keywords": [
+    "redux",
+    "state",
+    "observable",
+    "rxjs",
+    "subscribe",
+    "stream"
+  ],
+  "author": "Ammonix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ammonix/redux-state-observable/issues"
+  },
+  "homepage": "https://github.com/ammonix/redux-state-observable#readme"
+}
