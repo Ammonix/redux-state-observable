@@ -1,6 +1,8 @@
 {
   "name": "redux-state-observable",
-  "version": "0.1.1",
+
+  "version": "0.1.2",
+
   "description": "path to redux state property as observable",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
