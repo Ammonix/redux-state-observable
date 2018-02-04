@@ -14,14 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ammonix/redux-state-observable.git"
   },
-  "keywords": [
-    "redux",
-    "state",
-    "observable",
-    "rxjs",
-    "subscribe",
-    "stream"
-  ],
+  "keywords": ["redux", "state", "observable", "rxjs", "subscribe", "stream"],
   "bugs": {
     "url": "https://github.com/ammonix/redux-state-observable/issues"
   },
