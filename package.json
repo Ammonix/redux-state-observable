@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --reporter spec",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec",
     "release": "standard-version"
   },
@@ -30,14 +30,18 @@
   "homepage": "https://github.com/ammonix/redux-state-observable#readme",
   "devDependencies": {
     "@types/bluebird": "^3.5.20",
+    "@types/chai": "^4.1.2",
     "@types/core-js": "^0.9.36",
+    "@types/mocha": "^2.2.48",
     "@types/object-path": "^0.9.29",
     "chai": "^4.1.2",
+    "chai-rx": "0.0.4",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.0.0",
     "redux": "^3.7.2",
     "standard-version": "^4.3.0",
+    "ts-node": "^4.1.0",
     "typescript": "^2.7.1"
   },
   "publishConfig": {

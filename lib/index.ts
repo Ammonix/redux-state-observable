@@ -1,18 +1,15 @@
-import { get as getValue } from "object-path";
-import {
-  Store,
-  Unsubscribe,
-} from "redux";
+// import { get as getValue } from "object-path";
+import { Store, Unsubscribe } from "redux";
 import { Observable } from "rxjs/Observable";
-export function getValue$<TState, TValue = TState>(
+export function getValue$<TState>(
   store: Store<TState>,
-  objectPath: ObjectPathGlobal.IPath = ""
-): Observable<TValue> {
-  let value: TValue = getValue<TState, TValue>(store.getState(), objectPath);
-  return new Observable(observer => {
-    observer.next(value);
+  // objectPath: ObjectPathGlobal.IPath = ""
+): Observable<TState> {
+  // let value: TValue = getValue<TState, TValue>(store.getState(), objectPath);
+  return new Observable(subscriber => {
+    subscriber.next(store.getState());
     const unsubscribe: Unsubscribe = store.subscribe(() => {
-      observer.next(value);
+      subscriber.next(store.getState());
     });
     return unsubscribe;
   });
