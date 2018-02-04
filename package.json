@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha r ts-node/register test/**/*.spec.ts - - -R spec",
+    "cover" : "rimraf spec-js && tsc -p cover.tsconfig.json && node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha spec-js/**/*.spec.js",
     "release": "standard-version"
   },
   "author": "ammonix <joan.kuenzler@gmail.com>",
@@ -39,6 +39,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.0.0",
     "redux": "^3.7.2",
+    "remap-istanbul": "^0.10.1",
+    "rimraf": "^2.6.2",
     "standard-version": "^4.3.0",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.1"
