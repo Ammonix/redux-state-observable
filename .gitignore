@@ -1,1 +1,4 @@
 /node_modules
+/.vs
+/coverage
+/spec-js
