@@ -1,3 +1,7 @@
+branches:
+  only: 
+    - master
+    - develop
 language: node_js
 node_js:
   - stable
@@ -13,6 +17,7 @@ deploy:
   email: joan.kuenzler@gmail.com
   api_key: $NPM_TOKEN
   on:
+    branch: master
     tags: true
 notifications:
   slack:
