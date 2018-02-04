@@ -1,12 +1,19 @@
 language: node_js
 node_js:
-- stable
+  - stable
 install:
-- npm install
+  - npm install
 script:
-- npm run cover
+  - npm run cover
 # Send coverage data to Coveralls
-after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+after_script: 
+  "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+deploy:
+  provider: npm
+  email: ben@npmjs.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
 notifications:
   slack:
     secure: ljqoWIXIikf4pzrn4LNNKBcW1DLxvo787MJiw4iBZR+qAa0y58rZz2d2vnTM142jNB8eV3+aqrMUbxJQn0Exvs3trXxBDSEC5nsbQ8Cg7rY+SUcyrQcC8gHBsvfw1vcb2Lux6JOriakTsdRLMuQRouf8feUryJ+CMN39TPpkuYG8RaGbLl6qT3ZiuKkfUepiy9Sw6iTY76Bqz8T+5lD38do7vxl6glhVTkSyGUksvB40beO/LXgaKtJEH59H5I2/U8Z78+QtkjG3ptHRNz4EUecP6kjuApIKN+5HgUobtp7nW5aPfwsRKvbe3n2tlBsyvp2S+QaLeCptIo8oRANmLKJr3HwWwam9rxSZ1mgu7aOSVuqClvnfr4rltMXyyTefda/rO180ro2fA+kiadQxNa4RGhQkCJYEBoZEtM/drdBHGDiHjNjFo30vWAZ/lT8tf9b8vQRRXxe5P78FcXbpQj7od2PNMhqMD1N1fq64yYH87WBiue/6FEyq+Yqq03Im7D43NivxziXh90X1oRM0ipDbYTOt+Sfb5inZh2rJjj8K5PS9rlNr7kDx+cuhr4GbxVLYiN2C2+ytdZLj/0jkLCNyrDYF+MsEhUFWWb1GAYQXzzqQCSqAeo+OUtmPyqQnSMFuhp/8EfUEwdSWqa83WOrulHRkt/mej2Z/hBfvEtw=
