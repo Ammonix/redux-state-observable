@@ -1,1 +1,7 @@
 lib/
+test/
+_config.yml
+.gitignore
+cover.tsconfig.json
+tsconfig.json
+.travis.yml
