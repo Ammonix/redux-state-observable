@@ -10,7 +10,7 @@ after_script:
   "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 deploy:
   provider: npm
-  email: ben@npmjs.com
+  email: joan.kuenzler@gmail.com
   api_key: $NPM_TOKEN
   on:
     tags: true
