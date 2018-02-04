@@ -6,10 +6,10 @@ All notable changes to this project will be documented in this file. See [standa
 # [0.1.0](https://github.com/ammonix/redux-state-observable/compare/v0.0.5...v0.1.0) (2018-02-04)
 
 
+
 ### Features
 
 * **deployment:** only build master and dev ([f4b2500](https://github.com/ammonix/redux-state-observable/commit/f4b2500))
-
 
 
 <a name="0.0.5"></a>
