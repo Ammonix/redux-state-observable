@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec"
   },
   "author": "ammonix <joan.kuenzler@gmail.com>",
   "license": "MIT",
@@ -14,13 +15,22 @@
     "type": "git",
     "url": "git+https://github.com/ammonix/redux-state-observable.git"
   },
-  "keywords": ["redux", "state", "observable", "rxjs", "subscribe", "stream"],
+  "keywords": [
+    "redux",
+    "state",
+    "observable",
+    "rxjs",
+    "subscribe",
+    "stream"
+  ],
   "bugs": {
     "url": "https://github.com/ammonix/redux-state-observable/issues"
   },
   "homepage": "https://github.com/ammonix/redux-state-observable#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^5.0.0",
     "typescript": "^2.7.1"
   }
