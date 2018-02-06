@@ -108,7 +108,6 @@ describe("getValue$ function", () => {
     );
     let expected: any;
     const op: string[] = ["value"];
-    let pointer: number = 0;
     const store$: Observable<Tree<number>> = getValue$(store, op);
     const storeSubscription: Subscription = store$.subscribe(value => {
       expect(value).to.be.equal(expected);
