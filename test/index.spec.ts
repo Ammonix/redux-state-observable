@@ -18,17 +18,18 @@ function setup<TState, TPayload>(
   initialState: TState,
   reducerUpdate: (state: TState, payload: TPayload) => TState
 ): ICustomStore<TState, TPayload> {
-  var store: ICustomStore<TState, TPayload> = createStore(
-    (state: TState, action: AnyAction) => {
-      state = state || initialState;
-      switch (action.type) {
-        case "UPDATE":
-          return reducerUpdate(state, action.payload);
-        default:
-          return state;
-      }
+  var store: ICustomStore<
+    TState,
+    TPayload
+  > = createStore((state: TState, action: AnyAction) => {
+    state = state || initialState;
+    switch (action.type) {
+      case "UPDATE":
+        return reducerUpdate(state, action.payload);
+      default:
+        return state;
     }
-  ) as ICustomStore<TState, TPayload>;
+  }) as ICustomStore<TState, TPayload>;
   store.update = (payload: TPayload) => {
     store.dispatch({ type: "UPDATE", payload: payload });
   };
@@ -43,14 +44,15 @@ describe("getValue$ function", () => {
         return { value: payload };
       }
     );
-    let expected: number = 0;
+    let expected: number;
     const store$: Observable<Tree<number>> = getValue$(store);
     const storeSubscription: Subscription = store$.subscribe(tree => {
-      expected++;
       expect(tree.value).to.be.equal(expected);
     });
+    expected = 1;
+    store.update(1);
+    expected = 2;
     store.update(2);
-    expect(expected).to.be.equal(2);
     storeSubscription.unsubscribe();
   });
   it("should update simple observer with path", () => {
@@ -60,15 +62,19 @@ describe("getValue$ function", () => {
         return { value: payload };
       }
     );
-    let expected: number = 0;
+    let expected: number;
     const op: string[] = ["value"];
-    const store$: Observable<number> = getValue$<Tree<number>, number>(store, op);
+    const store$: Observable<number> = getValue$<Tree<number>, number>(
+      store,
+      op
+    );
     const storeSubscription: Subscription = store$.subscribe(value => {
-      expected++;
       expect(value).to.be.equal(expected);
     });
+    expected = 1;
+    store.update(1);
+    expected = 2;
     store.update(2);
-    expect(expected).to.be.equal(2);
     storeSubscription.unsubscribe();
   });
   it("should update observer with deep path", () => {
@@ -78,16 +84,19 @@ describe("getValue$ function", () => {
         return { ...state, tree: { ...state.tree, value: payload } };
       }
     );
-    let expected: number = 1;
+    let expected: number;
     const op: string[] = ["tree", "value"];
-    const store$: Observable<number> = getValue$<Tree<number>, number>(store, op);
+    const store$: Observable<number> = getValue$<Tree<number>, number>(
+      store,
+      op
+    );
     const storeSubscription: Subscription = store$.subscribe(value => {
-      expected++;
       expect(value).to.be.equal(expected);
     });
+    expected = 3;
     store.update(3);
+    expected = 4;
     store.update(4);
-    expect(expected).to.be.equal(4);
     storeSubscription.unsubscribe();
   });
   it("should update observer with any value", () => {
@@ -97,17 +106,16 @@ describe("getValue$ function", () => {
         return { value: payload };
       }
     );
-    let expected: any[] = [null, 1, "a"];
+    let expected: any;
     const op: string[] = ["value"];
-    let pointer: number = 0;
     const store$: Observable<Tree<number>> = getValue$(store, op);
     const storeSubscription: Subscription = store$.subscribe(value => {
-      expect(value).to.be.equal(expected[pointer]);
-      pointer++;
+      expect(value).to.be.equal(expected);
     });
+    expected = 1;
     store.update(1);
+    expected = "a";
     store.update("a");
-    expect(expected[pointer - 1]).to.be.equal("a");
     storeSubscription.unsubscribe();
   });
 });
