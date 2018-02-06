@@ -53,7 +53,6 @@ describe("getValue$ function", () => {
     store.update(1);
     expected = 2;
     store.update(2);
-    expect(expected).to.be.equal(2);
     storeSubscription.unsubscribe();
   });
   it("should update simple observer with path", () => {
@@ -76,7 +75,6 @@ describe("getValue$ function", () => {
     store.update(1);
     expected = 2;
     store.update(2);
-    expect(expected).to.be.equal(2);
     storeSubscription.unsubscribe();
   });
   it("should update observer with deep path", () => {
@@ -99,7 +97,6 @@ describe("getValue$ function", () => {
     store.update(3);
     expected = 4;
     store.update(4);
-    expect(expected).to.be.equal(4);
     storeSubscription.unsubscribe();
   });
   it("should update observer with any value", () => {
@@ -120,7 +117,6 @@ describe("getValue$ function", () => {
     store.update(1);
     expected = "a";
     store.update("a");
-    expect(expected[pointer - 1]).to.be.equal("a");
     storeSubscription.unsubscribe();
   });
 });
