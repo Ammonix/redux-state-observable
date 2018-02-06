@@ -1,9 +1,10 @@
 # redux-state-observable
 
 [![Build Status](https://travis-ci.org/Ammonix/redux-state-observable.svg?branch=master)](https://travis-ci.org/Ammonix/redux-state-observable)
-[![Coverage Status](https://coveralls.io/repos/github/Ammonix/redux-state-observable/badge.svg?branch=feature%2Finit_everything)](https://coveralls.io/github/Ammonix/redux-state-observable?branch=feature%2Finit_everything)
+[![Coverage Status](https://coveralls.io/repos/github/Ammonix/redux-state-observable/badge.svg?branch=master)](https://coveralls.io/github/Ammonix/redux-state-observable?branch=master)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://opensource.org/licenses/MIT)
+[![david](https://david-dm.org/ammonix/react-redux-observable.svg)](https://david-dm.org)
 
 [![NPM](https://nodei.co/npm/redux-state-observable.png)](https://nodei.co/npm/redux-state-observable/)
 
