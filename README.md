@@ -5,6 +5,7 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://opensource.org/licenses/MIT)
 [![david](https://david-dm.org/ammonix/redux-state-observable.svg)](https://david-dm.org/ammonix/redux-state-observable)
+[![Known Vulnerabilities](https://snyk.io/test/github/ammonix/redux-state-observable/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ammonix/redux-state-observable?targetFile=package.json)
 
 [![NPM](https://nodei.co/npm/redux-state-observable.png)](https://nodei.co/npm/redux-state-observable/)
 
